@@ -1,0 +1,6 @@
+(call (lambda (f) (call f f 10))
+      (lambda (f c)
+        (if (eq c 2)
+            (list 0 1)
+          (let ((a (call f f (sub c 1))))
+            (append a (add (nth a (sub (size a) 1)) (last a)))))))
